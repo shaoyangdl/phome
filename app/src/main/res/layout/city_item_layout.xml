@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:background="@drawable/city_selection_background"
+              android:layout_width="match_parent"
+              android:minWidth="360dp"
+              android:focusable="true"
+              android:padding="5dp"
+              android:layout_height="wrap_content">
+    <ImageView
+            android:id="@+id/radio"
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_radio_button_unchecked_black_24dp"/>
+    <TextView
+            android:id="@+id/city"
+            android:textSize="25sp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/lb_tv_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.pf.phome"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix '.test'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha4'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
+    implementation 'com.joanzapata.iconify:android-iconify-weathericons:2.2.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.3'
+    implementation 'androidx.leanback:leanback:1.0.0'
+    implementation 'androidx.leanback:leanback-preference:1.0.0'
+    // optional - ReactiveStreams support for LiveData
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.0.0'
+
+    implementation "androidx.room:room-runtime:2.1.0-alpha06"
+    kapt "androidx.room:room-compiler:2.1.0-alpha06" // use kapt for Kotlin
+
+    // optional - RxJava support for Room
+    implementation "androidx.room:room-rxjava2:2.1.0-alpha06"
+
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+
+
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+}
